@@ -39,6 +39,7 @@ document.querySelector('.delete-account').addEventListener('click', () => {
         deleteUser(user).then(() => {
             window.location.href = "https://thinkwisenotes.webflow.io/"
         }).catch((error) => {
+            console.error(error);
         });
 
     }
@@ -71,12 +72,6 @@ document.querySelector('.reset-password').addEventListener('click', () => {
 
 });
 
-document.querySelector('.change-email').addEventListener('click', () => {
-    const user = auth.currentUser;
-    let emailInput = document.getElementById('login-email')
-    user.updateEmail(emailInput.value);
-    loadUserData();
-});
 
 
 //Navbar
