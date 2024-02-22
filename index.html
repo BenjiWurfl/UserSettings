@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+          integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link href="./output.css" rel="stylesheet">
+
+    <!-- Boxicons CSS -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- CSS für die Navbar -->
+    <link rel="stylesheet" href="navbar-style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="sidebar close">
+    <header>
+        <div class="image-text">
+                <span class="image">
+                    <img src="images/Thinkwise-Logo-Quadr-Tr.png" alt="">
+                </span>
+
+            <div class="text logo-text">
+                <span class="name">Thinkwise</span>
+                <span class="profession">App Interface</span>
+            </div>
+        </div>
+
+        <i class='bx bx-chevron-right toggle'></i>
+    </header>
+
+    <div class="menu-bar">
+        <div class="menu">
+            <ul class="menu-links">
+                <li class="nav-link">
+                    <a href="https://benjiwurfl.github.io/Home/">
+                        <i class='bx bx-home-alt icon'></i>
+                        <span class="text nav-text">Home</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="#">
+                        <i class='bx bx-file icon'></i>
+                        <span class="text nav-text">Projects</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="https://benjiwurfl.github.io/">
+                        <i class='bx bx-calendar icon'></i>
+                        <span class="text nav-text">Calendar</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="https://benjiwurfl.github.io/Notes/">
+                        <i class='bx bx-edit icon'></i>
+                        <span class="text nav-text">Notes</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="https://benjiwurfl.github.io/MindMaps/">
+                        <i class='bx bx-vector icon'></i>
+                        <span class="text nav-text">MindMaps</span>
+                    </a>
+                </li>
+
+                <li class="nav-link">
+                    <a href="https://benjiwurfl.github.io/UserSettings/">
+                        <i class='bx bx-cog icon'></i>
+                        <span class="text nav-text">Settings</span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="bottom-content">
+            <li class="nav-link logout">
+                <a href="https://thinkwisenotes.webflow.io/">
+                    <i class='bx bx-log-out icon'></i>
+                    <span class="text nav-text">Logout</span>
+                </a>
+            </li>
+
+            <li class="mode">
+                <div class="sun-moon">
+                    <i class='bx bx-moon icon moon'></i>
+                    <i class='bx bx-sun icon sun'></i>
+                </div>
+                <span class="mode-text text">Dark mode</span>
+
+                <div class="toggle-switch">
+                    <span class="switch"></span>
+                </div>
+            </li>
+        </div>
+    </div>
+</nav>
+
+<section class="home">
+    <div class="col-span-8 overflow-hidden rounded-xl sm:bg-gray-50 sm:px-8 sm:shadow">
+        <div class="pt-4">
+            <h1 class="py-2 text-2xl font-semibold">Account settings</h1>
+            <p class="font- text-slate-600">Configure your user settings.</p>
+        </div>
+        <hr class="mt-4 mb-8" />
+
+        <!-- EMAIL SECTION -->
+
+        <p class="py-2 text-xl font-semibold">Email Address</p>
+        <p class="text-gray-600 my-1">Your current email address is <strong class="user-email">john.doe@company.com</strong></p>
+        <div class="flex items-center">
+            <div class="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-3">
+                <label for="login-email">
+                    <span class="text-sm text-gray-500">New Email</span>
+                    <div class="relative flex overflow-hidden rounded-md border-2 transition focus-within:border-blue-600">
+                        <input type="email" id="login-email" class="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-sm text-base text-gray-700 placeholder-gray-400 focus:outline-none" placeholder="example@abc.com" />
+                    </div>
+                    <p class="mt-2 text-red-500 text-sm">Attention! If you enter the <span class="font-semibold">wrong email</span> you will no longer have access to your account!</p>
+                    <button class="change-email mt-4 rounded-lg bg-[#3019bd] px-4 py-2 text-white">Save Email</button>
+                </label>
+            </div>
+        </div>
+
+        <hr class="mt-4 mb-8" />
+
+        <!-- PASSWORD SECTION -->
+
+        <p class="py-2 text-xl font-semibold">Password</p>
+        <div class="flex items-center">
+            <div class="flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-3">
+                <label for="current-password">
+                    <span class="text-sm text-gray-500">Current Password</span>
+                    <div class="relative flex overflow-hidden rounded-md border-2 transition focus-within:border-blue-600">
+                        <input type="password" id="current-password" class="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none" placeholder="***********" />
+                    </div>
+                </label>
+                <label for="new-password">
+                    <span class="text-sm text-gray-500">New Password</span>
+                    <div class="relative flex overflow-hidden rounded-md border-2 transition focus-within:border-blue-600">
+                        <input type="password" id="new-password" class="w-full flex-shrink appearance-none border-gray-300 bg-white py-2 px-4 text-base text-gray-700 placeholder-gray-400 focus:outline-none" placeholder="***********" />
+                    </div>
+                </label>
+            </div>
+        </div>
+        <p class="mt-2">Can't remember your current password? <span class="reset-password text-sm font-semibold text-blue-600 underline decoration-2">Reset password</span></p>
+        <button class="save-password mt-4 rounded-lg bg-[#3019bd] px-4 py-2 text-white">Save Password</button>
+        <hr class="mt-4 mb-8" />
+
+        <div class="mb-10">
+            <p class="py-2 text-xl font-semibold">Delete Account</p>
+            <p class="inline-flex items-center rounded-full bg-rose-100 px-4 py-1 text-rose-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                </svg>
+                Proceed with caution
+            </p>
+            <p class="mt-2">We will completely wipe your data. There is no way to access your account after this action.</p>
+            <button class="delete-account ml-auto text-sm font-semibold text-rose-600 underline decoration-2">Continue with deletion</button>
+        </div>
+    </div>
+
+</section>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
