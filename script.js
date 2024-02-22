@@ -1,6 +1,6 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
 import {getFirestore} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
-import {getAuth, onAuthStateChanged, sendPasswordResetEmail, updatePassword, deleteUser} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+import {getAuth, onAuthStateChanged, sendPasswordResetEmail, updatePassword, deleteUser, updateEmail} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBe7d9bllq8RnmI6xxEBk3oub3qogPT2aM",
@@ -74,8 +74,7 @@ document.querySelector('.reset-password').addEventListener('click', () => {
 document.querySelector('.change-email').addEventListener('click', () => {
     let emailInput = document.getElementById('login-email')
     updateEmail(auth.currentUser, emailInput.value).then(() => {
-        // Email updated!
-        // ...
+        loadUserData();
     }).catch((error) => {
         // An error occurred
         // ...
