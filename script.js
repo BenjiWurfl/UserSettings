@@ -76,8 +76,7 @@ document.querySelector('.change-email').addEventListener('click', () => {
     updateEmail(auth.currentUser, emailInput.value).then(() => {
         loadUserData();
     }).catch((error) => {
-        // An error occurred
-        // ...
+        console.error(error);
     });
 });
 
