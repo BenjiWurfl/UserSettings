@@ -1,6 +1,6 @@
 import {initializeApp} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
 import {getFirestore} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
-import {getAuth, onAuthStateChanged, sendPasswordResetEmail, updatePassword, deleteUser, updateEmail} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+import {getAuth, onAuthStateChanged, sendPasswordResetEmail, updatePassword, deleteUser, updateEmail, reauthenticateWithCredential} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyBe7d9bllq8RnmI6xxEBk3oub3qogPT2aM",
@@ -39,9 +39,11 @@ document.querySelector('.delete-account').addEventListener('click', () => {
         deleteUser(user).then(() => {
             window.location.href = "https://thinkwisenotes.webflow.io/"
         }).catch((error) => {
-            console.error(error);
-        });
-
+            const credential = promptForCredentials();
+            reauthenticateWithCredential(user, credential).then(() => {
+                deleteUser(user)
+            });
+        })
     }
 });
 
