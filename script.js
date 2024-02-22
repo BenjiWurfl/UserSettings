@@ -72,12 +72,10 @@ document.querySelector('.reset-password').addEventListener('click', () => {
 });
 
 document.querySelector('.change-email').addEventListener('click', () => {
+    const user = auth.currentUser;
     let emailInput = document.getElementById('login-email')
-    updateEmail(auth.currentUser, emailInput.value).then(() => {
-        loadUserData();
-    }).catch((error) => {
-        console.error(error);
-    });
+    user.updateEmail(emailInput.value);
+    loadUserData();
 });
 
 
