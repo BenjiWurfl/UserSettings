@@ -39,11 +39,9 @@ document.querySelector('.delete-account').addEventListener('click', () => {
         deleteUser(user).then(() => {
             window.location.href = "https://thinkwisenotes.webflow.io/"
         }).catch((error) => {
-            const credential = promptForCredentials();
-            reauthenticateWithCredential(user, credential).then(() => {
-                deleteUser(user)
-            });
-        })
+            alert('It\'s been too long since your last login. Due to safety reasons you have to logout and login again.')
+        });
+
     }
 });
 
