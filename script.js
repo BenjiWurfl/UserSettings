@@ -62,7 +62,7 @@ document.querySelector('.reset-password').addEventListener('click', () => {
 
     sendPasswordResetEmail(auth, user.email)
         .then(() => {
-            console.log("Email sent to: ", user.email);
+            alert("An Email has been sent to: " + user.email);
         })
         .catch((error) => {
             const errorCode = error.code;
